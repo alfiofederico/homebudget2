@@ -1,4 +1,7 @@
 "use client";
+import Head from "./head";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./globals.css";
 
@@ -13,9 +16,10 @@ export default function RootLayout({ children }) {
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <head />
+      <Head />
       <body>
         <FinanceContextProvider>
+          <ToastContainer />
           <Nav />
           {children}
         </FinanceContextProvider>

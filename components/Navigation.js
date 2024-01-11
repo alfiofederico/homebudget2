@@ -22,10 +22,12 @@ function Nav() {
         {/* Right side of our navigation */}
         <nav className="flex items-center gap-4">
           <div>
-            <ImStatsBars className="text-2xl" />
+            <a href="#stats">
+              <ImStatsBars className="text-2xl" />
+            </a>
           </div>
           <div>
-            <button className="btn btn-danger">Sign out</button>
+            <button className="btn btn-danger">Sign out | No need </button>
           </div>
         </nav>
       </div>

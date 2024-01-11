@@ -4,7 +4,7 @@ import { financeContext } from "@/lib/store/finance-context";
 
 import { FaRegTrashAlt } from "react-icons/fa";
 import Modal from "@/components/Modal";
-
+import { Toast, toast } from "react-toastify";
 
 function AddIncomeModal({ show, onClose }) {
   const amountRef = useRef();
@@ -26,7 +26,9 @@ function AddIncomeModal({ show, onClose }) {
       await addIncomeItem(newIncome);
       descriptionRef.current.value = "";
       amountRef.current.value = "";
+      toast.success("Income added!")
     } catch (error) {
+      toast.error(error.message)
       console.log(error.message);
     }
   };
@@ -34,7 +36,9 @@ function AddIncomeModal({ show, onClose }) {
   const deleteIncomeEntryHandler = async (incomeId) => {
     try {
       await removeIncomeItem(incomeId);
+      toast.success("Income deleted!");
     } catch (error) {
+      toast.error(error.message);
       console.log(error.message);
     }
   };
